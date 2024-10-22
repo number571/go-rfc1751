@@ -21,7 +21,7 @@
 		<a href="https://github.com/number571/go-rfc1751/actions">
         	<img src="https://github.com/number571/go-rfc1751/actions/workflows/go.yml/badge.svg" alt="Build" />
 		</a>
-		<a href="https://github.com/number571/go-rfc1751/blob/ee4b08c309d6966bd31621ceb7b0826708ca5dfb/Makefile#L55">
+		<a href="https://github.com/number571/go-rfc1751/blob/c5bd2b4f6efe50674c322175b0d2783f301e4732/Makefile#L43">
         	<img src="test/badge_coverage.svg" alt="Coverage" />
 		</a>
 	</p>
