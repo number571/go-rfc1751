@@ -5,7 +5,7 @@
 <h2>
 	<p align="center">
     	<strong>
-	        GO-RFC1751
+	        Mnemonics with RFC1751 format
    		</strong>
 	</p>
 	<p align="center">
