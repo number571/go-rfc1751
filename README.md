@@ -4,6 +4,16 @@
 
 The RFC1751 encoding in Go language. The code is mostly rewritten from the Python [implementation](https://github.com/remram44/python-rfc1751). Tested on examples of repositories [remram44/python-rfc1751](https://github.com/remram44/python-rfc1751), [vmizg/rfc1751.js](https://github.com/vmizg/rfc1751.js), [arokettu/php-rfc1751](https://github.com/arokettu/php-rfc1751).
 
+### Installation
+
+```bash
+$ go get github.com/number571/go-rfc1751
+```
+
+### Requirements
+
+1. Go version `>= 1.16`
+
 ### Example
 
 ```go
