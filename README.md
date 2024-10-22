@@ -14,7 +14,13 @@ $ go get github.com/number571/go-rfc1751
 
 1. Go version `>= 1.16`
 
-### Example
+### Examples
+
+```go
+r := rand.New(rand.NewSource(1)) // insecure: used math/rand
+fmt.Println(NewMnemonic(r, 128))
+// Output: BARK TROD AMY UP LUG KNOB GAS WHEN NEWT POT KEY MEAN
+```
 
 ```go
 b := []byte{204, 172, 42, 237, 89, 16, 86, 190}

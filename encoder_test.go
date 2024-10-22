@@ -29,7 +29,7 @@ func TestErrors(t *testing.T) {
 	}
 }
 
-func TestPanics(t *testing.T) {
+func TestEncoderPanics(t *testing.T) {
 	t.Parallel()
 
 	testPanicEncodeToString(t, []byte{1, 2, 3, 4, 5, 6, 7})
