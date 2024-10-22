@@ -65,7 +65,7 @@ func TestDecodeString(t *testing.T) {
 		want []byte
 	}{
 		{
-			name: "test-1", // example from: https://github.com/remram44/python-rfc1751
+			name: "test-1", // example from: https://datatracker.ietf.org/doc/rfc1751/
 			have: "TIDE ITCH SLOW REIN RULE MOT",
 			want: []byte{0xEB, 0x33, 0xF7, 0x7E, 0xE7, 0x3D, 0x40, 0x53},
 		},
@@ -112,7 +112,7 @@ func TestEncodeToString(t *testing.T) {
 		want string
 	}{
 		{
-			name: "test-1", // example from: https://github.com/remram44/python-rfc1751
+			name: "test-1", // example from: https://datatracker.ietf.org/doc/rfc1751/
 			have: []byte{0xEB, 0x33, 0xF7, 0x7E, 0xE7, 0x3D, 0x40, 0x53},
 			want: "TIDE ITCH SLOW REIN RULE MOT",
 		},

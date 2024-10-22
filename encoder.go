@@ -36,9 +36,6 @@ func DecodeString(s string) ([]byte, error) {
 }
 
 func wordsToBytes(s []string) ([]byte, error) {
-	if len(s) != 6 {
-		panic("len(s) != 6")
-	}
 	result := make([]byte, 10)
 	for i, w := range s {
 		index, ok := wordsIndex[w]
@@ -51,14 +48,15 @@ func wordsToBytes(s []string) ([]byte, error) {
 		cl := (y >> 16) & 0xFF
 		cc := (y >> 8) & 0xFF
 		cr := y & 0xFF
-		if shift+bitsPerWord > 16 {
+		switch {
+		case shift+bitsPerWord > 16:
 			result[start/8] |= byte(cl)
 			result[start/8+1] |= byte(cc)
 			result[start/8+2] |= byte(cr)
-		} else if shift+bitsPerWord > 8 {
+		case shift+bitsPerWord > 8:
 			result[start/8] |= byte(cc)
 			result[start/8+1] |= byte(cr)
-		} else {
+		default:
 			result[start/8] |= byte(cr)
 		}
 	}
@@ -73,9 +71,6 @@ func wordsToBytes(s []string) ([]byte, error) {
 }
 
 func bytesToWords(b []byte) []string {
-	if len(b) != 8 {
-		panic("len(b) != 8")
-	}
 	parity := uint64(0)
 	for i := uint64(0); i < 64; i += 2 {
 		parity += extractBits(b, i, 2)
@@ -99,10 +94,9 @@ func extractBits(b []byte, start, length uint64) uint64 {
 	cc := arr[start/8+1]
 	cr := arr[start/8+2]
 
-	result := uint64(0)
-	result = ((uint64(cl)<<8 | uint64(cc)) << 8) | uint64(cr)
-	result = result >> (24 - (length + (start % 8)))
-	result = result & (0xFFFF >> (16 - length))
+	result := ((uint64(cl)<<8 | uint64(cc)) << 8) | uint64(cr)
+	result >>= (24 - (length + (start % 8)))
+	result &= (0xFFFF >> (16 - length))
 
 	return result
 }

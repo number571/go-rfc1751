@@ -1,8 +1,55 @@
-# go-rfc1751
+<p align="center">
+    <img src="images/go-rfc1751_logo.png" alt="go-rfc1751_logo.png"/>
+</p>
 
-> https://datatracker.ietf.org/doc/html/rfc1751
+<h2>
+	<p align="center">
+    	<strong>
+	        GO-RFC1751
+   		</strong>
+	</p>
+	<p align="center">
+		<a href="https://github.com/topics/golang">
+        	<img src="https://img.shields.io/github/go-mod/go-version/number571/go-rfc1751" alt="Go" />
+		</a>
+		<a href="https://github.com/number571/go-rfc1751/releases">
+        	<img src="https://img.shields.io/github/v/release/number571/go-rfc1751.svg" alt="Release" />
+		</a>
+		<a href="https://github.com/number571/go-rfc1751/blob/master/LICENSE">
+        	<img src="https://img.shields.io/github/license/number571/go-rfc1751.svg" alt="License" />
+		</a>
+		<a href="https://github.com/number571/go-rfc1751/actions">
+        	<img src="https://github.com/number571/go-rfc1751/actions/workflows/go.yml/badge.svg" alt="Build" />
+		</a>
+		<a href="https://github.com/number571/go-rfc1751/blob/ee4b08c309d6966bd31621ceb7b0826708ca5dfb/Makefile#L55">
+        	<img src="test/badge_coverage.svg" alt="Coverage" />
+		</a>
+	</p>
+	<p align="center">
+		<a href="https://goreportcard.com/report/github.com/number571/go-rfc1751">
+        	<img src="https://goreportcard.com/badge/github.com/number571/go-rfc1751" alt="GoReportCard" />
+		</a>
+		<a href="https://github.com/number571/go-rfc1751/pulse">
+        	<img src="https://img.shields.io/github/commit-activity/m/number571/go-rfc1751" alt="Activity" />
+		</a>
+		<a href="https://github.com/number571/go-rfc1751/commits/master">
+        	<img src="https://img.shields.io/github/last-commit/number571/go-rfc1751.svg" alt="Commits" />
+		</a>
+		<a href="https://img.shields.io/github/downloads/number571/go-rfc1751/total.svg">
+        	<img src="https://img.shields.io/github/downloads/number571/go-rfc1751/total.svg" alt="Downloads" />
+		</a>
+		<a href="https://godoc.org/github.com/number571/go-rfc1751">
+        	<img src="https://godoc.org/github.com/number571/go-rfc1751?status.svg" alt="GoDoc" />
+		</a>
+	</p>
+    About project
+</h2>
 
-The RFC1751 encoding in Go language. The code is mostly rewritten from the Python [implementation](https://github.com/remram44/python-rfc1751). Tested on examples of repositories [remram44/python-rfc1751](https://github.com/remram44/python-rfc1751), [vmizg/rfc1751.js](https://github.com/vmizg/rfc1751.js), [arokettu/php-rfc1751](https://github.com/arokettu/php-rfc1751).
+The [RFC1751](https://datatracker.ietf.org/doc/html/rfc1751) encoding in Go language. The code is mostly rewritten from the Python [implementation](https://github.com/remram44/python-rfc1751). Tested on examples of repositories [remram44/python-rfc1751](https://github.com/remram44/python-rfc1751), [vmizg/rfc1751.js](https://github.com/vmizg/rfc1751.js), [arokettu/php-rfc1751](https://github.com/arokettu/php-rfc1751).
+
+## Coverage map
+
+<p align="center"><img src="test/coverage.svg" alt="coverage.svg"/></p>
 
 ## Installation
 

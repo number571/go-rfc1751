@@ -9,19 +9,19 @@ import (
 
 type testReader struct{}
 
-func (_ *testReader) Read(b []byte) (int, error) {
-	r := rand.New(rand.NewSource(1))
+func (p *testReader) Read(b []byte) (int, error) {
+	r := rand.New(rand.NewSource(1)) // nolint: gosec
 	return r.Read(b)
 }
 
 type testReaderWithError struct{}
 
-func (_ *testReaderWithError) Read(b []byte) (int, error) {
-	return 0, errors.New("some error")
+func (p *testReaderWithError) Read(_ []byte) (int, error) {
+	return 0, errors.New("some error") // nolint: err113
 }
 
 func ExampleNewMnemonic() {
-	r := rand.New(rand.NewSource(1)) // insecure: used math/rand
+	r := rand.New(rand.NewSource(1)) // nolint: gosec
 	fmt.Println(NewMnemonic(r, 128))
 	// Output: BARK TROD AMY UP LUG KNOB GAS WHEN NEWT POT KEY MEAN
 }
