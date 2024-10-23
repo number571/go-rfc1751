@@ -70,6 +70,11 @@ func TestDecodeString(t *testing.T) {
 			want: []byte{0xEB, 0x33, 0xF7, 0x7E, 0xE7, 0x3D, 0x40, 0x53},
 		},
 		{
+			name: "test-1-cases", // example from: https://datatracker.ietf.org/doc/rfc1751/
+			have: "tiDE ITch sLoW ReIn RULE mot",
+			want: []byte{0xEB, 0x33, 0xF7, 0x7E, 0xE7, 0x3D, 0x40, 0x53},
+		},
+		{
 			name: "test-2", // example from: https://github.com/remram44/python-rfc1751
 			have: "RASH BUSH MILK LOOK BAD BRIM",
 			want: []byte{204, 172, 42, 237, 89, 16, 86, 190},
