@@ -20,7 +20,7 @@ func EncodeToString(b []byte) string {
 }
 
 func DecodeString(s string) ([]byte, error) {
-	sp := strings.Fields(s)
+	sp := strings.Fields(strings.ToUpper(s))
 	if len(sp)%6 != 0 {
 		panic("len(b)%6 != 0")
 	}
