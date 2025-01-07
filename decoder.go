@@ -1,6 +1,8 @@
 package gorfc1751
 
-import "strings"
+import (
+	"strings"
+)
 
 func DecodeString(s string) ([]byte, error) {
 	sp := strings.Fields(strings.ToUpper(s))

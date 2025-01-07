@@ -5,6 +5,7 @@ import (
 )
 
 const (
+	// 2^11 = 2048 words
 	bitsPerWord = 11
 )
 
