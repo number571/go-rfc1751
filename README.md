@@ -57,9 +57,7 @@ $ go get github.com/number571/go-rfc1751
 
 1. Go version `>= 1.16`
 
-## Examples
-
-### Functions
+## Functions
 
 ```go
 r := rand.New(rand.NewSource(1)) // insecure: used math/rand
@@ -77,13 +75,6 @@ fmt.Println(EncodeToString(b))
 s := "RASH BUSH MILK LOOK BAD BRIM"
 fmt.Println(DecodeString(s))
 // Output: [204 172 42 237 89 16 86 190] <nil>
-```
-
-### Applications
-
-```bash
-$ go run ./cmd/mnem -size=128
-RACY GUN DUN LOP RUSS CODE LENT MOVE DUEL AID SIS BUST
 ```
 
 ## License
