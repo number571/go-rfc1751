@@ -26,34 +26,26 @@ func ExampleNewMnemonic() {
 	// Output: BARK TROD AMY UP LUG KNOB GAS WHEN NEWT POT KEY MEAN
 }
 
-func TestMnemonicPanics(t *testing.T) {
+func TestMnemonicErrors(t *testing.T) {
 	t.Parallel()
 
-	testPanicMnemonicBitSize(t, 32)
-	testPanicMnemonicBitSize(t, 65)
-	testPanicMnemonicBitSize(t, 224)
+	testErrorMnemonicBitSize(t, 32)
+	testErrorMnemonicBitSize(t, 65)
+	testErrorMnemonicBitSize(t, 224)
 
-	testPanicMnemonicReadError(t)
+	testErrorMnemonicReadError(t)
 }
 
-func testPanicMnemonicBitSize(t *testing.T, bitSize uint64) {
-	defer func() {
-		if r := recover(); r == nil {
-			t.Error("nothing panics")
-			return
-		}
-	}()
-	_ = NewMnemonic(&testReader{}, bitSize)
+func testErrorMnemonicBitSize(t *testing.T, bitSize uint64) {
+	if _, err := NewMnemonic(&testReader{}, bitSize); err == nil {
+		t.Error("nothing errors")
+	}
 }
 
-func testPanicMnemonicReadError(t *testing.T) {
-	defer func() {
-		if r := recover(); r == nil {
-			t.Error("nothing panics")
-			return
-		}
-	}()
-	_ = NewMnemonic(&testReaderWithError{}, 64)
+func testErrorMnemonicReadError(t *testing.T) {
+	if _, err := NewMnemonic(&testReaderWithError{}, 64); err == nil {
+		t.Error("nothing errors")
+	}
 }
 
 func TestNewMnemonic(t *testing.T) {
@@ -86,7 +78,7 @@ func TestNewMnemonic(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		got := NewMnemonic(&testReader{}, tt.have)
+		got, _ := NewMnemonic(&testReader{}, tt.have)
 		if got != tt.want {
 			t.Errorf("\ntest\t= %s\nwant\t= %s\ngot\t= %s", tt.name, tt.want, got)
 			continue

@@ -22,7 +22,10 @@ func main() {
 	flag.Parse()
 
 	if !*convParam {
-		mnemonic := gorfc1751.NewMnemonic(rand.Reader, *sizeParam)
+		mnemonic, err := gorfc1751.NewMnemonic(rand.Reader, *sizeParam)
+		if err != nil {
+			panic(err)
+		}
 		if !*rawParam {
 			fmt.Println(mnemonic)
 			return
@@ -51,9 +54,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	mnemonic := gorfc1751.NewMnemonic(
+	mnemonic, err := gorfc1751.NewMnemonic(
 		bytes.NewReader(seedBytes),
 		uint64(len(seedBytes))*8,
 	)
+	if err != nil {
+		panic(err)
+	}
 	fmt.Println(mnemonic)
 }
