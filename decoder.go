@@ -27,7 +27,7 @@ func wordsToBytes(s []string) ([]byte, error) {
 		if !ok {
 			return nil, ErrIndexWordNotFound
 		}
-		start := uint64(i) * bitsPerWord
+		start := uint64(i) * bitsPerWord // nolint: gosec
 		shift := (8 - ((start + bitsPerWord) % 8)) % 8
 		y := index << shift
 		cl := (y >> 16) & 0xFF

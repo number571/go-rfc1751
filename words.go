@@ -6,7 +6,7 @@ const (
 
 func init() {
 	for i, v := range wordsList {
-		wordsIndex[v] = uint64(i)
+		wordsIndex[v] = uint64(i) // nolint: gosec
 	}
 }
 
