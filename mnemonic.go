@@ -1,7 +1,6 @@
 package gorfc1751
 
 import (
-	"errors"
 	"io"
 )
 
@@ -11,7 +10,7 @@ func NewMnemonic(r io.Reader, bitSize uint64) (string, error) {
 	}
 	buf := make([]byte, bitSize/8)
 	if _, err := r.Read(buf); err != nil {
-		return "", errors.Join(ErrReader, err)
+		return "", ErrReader
 	}
 	return EncodeToString(buf), nil
 }
