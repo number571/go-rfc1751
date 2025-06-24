@@ -23,7 +23,7 @@ func (p *testReaderWithError) Read(_ []byte) (int, error) {
 func ExampleNewMnemonic() {
 	r := rand.New(rand.NewSource(1)) // nolint: gosec
 	fmt.Println(NewMnemonic(r, 128))
-	// Output: BARK TROD AMY UP LUG KNOB GAS WHEN NEWT POT KEY MEAN
+	// Output: BARK TROD AMY UP LUG KNOB GAS WHEN NEWT POT KEY MEAN <nil>
 }
 
 func TestMnemonicErrors(t *testing.T) {
